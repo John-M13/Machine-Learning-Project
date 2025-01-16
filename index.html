@@ -2,39 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/p5@latest/lib/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@latest/lib/addons/p5.dom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ml5@latest/dist/ml5.min.js"></script>
 
-    <title>machile learning project</title>
+    <title>Machine Learning Project - "En Proceso"</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-    <script src="libraries/p5.min.js"></script>
-    <script src="libraries/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
 
   <body>
-    <script src="sketch.js"></script>
-    
-     <header>
-          <h1>Machine learning project</h1>
-          <h2>Proyecto: "Dibuja tu Jugada"</h2>
+    <header>
+      <h1>"NO FUNCIONA TODAVIA, Se encuentra en proceso"</h1>
+      <h2>Proyecto: "Dibuja tu Jugada"</h2>
     </header>
 
-    <p>
-      Este proyecto permitiría a los usuarios dibujar
-      jugadas de fútbol permitiendo a los usuarios 
-      dibujar en papel y capturarlo con una cámara, 
-      un modelo de clasificación para identificar la 
-      jugada dibujada proporcionando un resultado 
-      en tiempo real.
-      <br><br>
-        <span class="bold"> Dibujo:</span> La persona  podrá dibujar utilizando papel y capturarlo con una cámara.
-      <br><br>
-        <span class="bold">Clasificación:</span>El modelo procesará los dibujos en el lienzo y devolverá la categoría más probable junto con un porcentaje de confianza.
-      <br><br>
-        <span class="bold">Resultados:</span>Una interfaz gráfica mostrará el nombre de la jugada detectada y el porcentaje de confianza.
-    </p>
+    <script src="sketch.js"></script>
 
-
+  
+    <div id="instructions">
+      <h3>Instrucciones:</h3>
+      <ol>
+        <li>Dibuja tu alineación preferida de fútbol en un papel.</li>
+        <li>Muéstrala frente a la pantalla.</li>
+        <li>El sistema te dará la confianza de si es correcta tu alineación dibujada.</li>
+        <li>Te dirá a qué tipo de alineación pertenece.</li>
+      </ol>
+    </div>
   </body>
 </html>
