@@ -1,81 +1,182 @@
+/* Títulos principales h1 y h2 */
+h1, h2 {
+    transition: all 0.3s ease; /* Transición suave en todas las propiedades */
+}
+
+h1 {
+    color: #ffffff; /* Verde oscuro por defecto */
+    font-size: 2.5em; /* Tamaño grande */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra suave */
+}
+
+h1:hover {
+    color: #00ff1e; /* Verde más oscuro en hover */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7); /* Aumenta la sombra */
+}
+
+h2 {
+    color: #ffffff; /* Verde brillante por defecto */
+    font-size: 2em; /* Tamaño de fuente más pequeño que h1 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}
+
+h2:hover {
+    color: #ffffff; /* Verde más oscuro en hover */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* Aumenta la sombra */
+}
+
+/* Restante CSS (sin cambios) */
+
+/* Fondo y cuerpo */
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-image: url('https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-    background-size: cover; /* Asegura que la imagen cubra toda el área */
-    background-position: center; /* Centra la imagen */
-    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    transition: background-color 0.5s ease;
 }
 
+/* Header y cuadros */
 header {
     text-align: center;
     margin: 20px;
+    z-index: 1;
 }
 
 .header-box {
-    padding: 10px;
-    background-color: #fff;
-    border: 5px solid #107e22;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(16, 126, 34, 0.8), rgba(0, 172, 193, 0.8)); /* Verde + Azul */
+    border: 2px solid #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     width: 80%;
     text-align: center;
+    backdrop-filter: blur(12px); /* Fondo difuso */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease, background 0.3s ease;
 }
 
+.header-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Instrucciones */
 #instructions {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #fff;
-    border: 5px solid #107e22;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+    border: 2px solid #107e22;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     width: 80%;
     text-align: left;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 #instructions h3 {
     margin-top: 0;
+    font-size: 1.6em;
+    color: #0b3d1f; /* Verde oscuro para un buen contraste */
+    font-weight: bold;
 }
 
 #instructions ol {
     margin: 0;
     padding-left: 20px;
+    line-height: 1.8;
+    color: #333; /* Gris oscuro para mejorar el contraste */
 }
 
-/* Estilo para el contenedor de imágenes */
+#instructions:hover {
+    transform: scale(1.02);
+    background-color: rgba(255, 255, 255, 1); /* Fondo más sólido al hacer hover */
+}
+
+/* Cuadro de imagen */
 #image-box {
-    margin-top: 25px; /* Aumentado el margen superior a 50px para separar más del canvas de la cámara */
-    margin-left: 25px;
-    margin-right: 25px;
-    padding: 10px;
-    background-color: #fff7f7;
-    border: 5px solid #107e22;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 378px;  /* Ajustamos el ancho del cuadro para que sea 25px más grande que la imagen */
+    margin-top: 50px;
+    padding: 25px;
+    background-color: rgba(255, 247, 247, 0.9); /* Fondo suave */
+    border: 3px solid #107e22; /* Borde verde para consistencia */
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    width: 400px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* Estilo para el contenedor de la imagen */
+#image-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.95); /* Cambio de color suave al hacer hover */
+}
+
+/* Imagen */
 #image-display {
-    margin-top: 10px; /* Ajuste del margen superior */
+    margin-top: 15px;
 }
 
 #image-display img {
-    margin-top: 0; /* Elimina cualquier margen superior extra */
+    width: 100%;
+    border-radius: 8px;
+    border: 3px solid #107e22; /* Borde verde */
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+#image-display img:hover {
+    transform: scale(1.03);
+    filter: brightness(90%);
+}
+
+/* Botón */
 #change-image-btn {
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    background-color: #000;
+    margin-top: 15px;
+    padding: 15px 30px;
+    background-color: #107e22; /* Verde intenso */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 12px;
     cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+#change-image-btn:hover {
+    background-color: #005c1e; /* Verde más oscuro */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
 
+#change-image-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header, .header-box, #instructions, #image-box {
+    animation: fadeIn 1s ease-in-out;
+}
