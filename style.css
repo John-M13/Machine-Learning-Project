@@ -33,36 +33,13 @@ header {
     padding-left: 20px;
 }
 
-#categories {
-    margin-top: 30px;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.category {
-    text-align: center;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-}
-
-.category h4 {
-    margin: 10px 0;
-    font-size: 18px;
-}
-
-.category img {
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
 #image-display {
+    margin-top: 40px; /* Aumenta el margen superior para separar las imágenes de las instrucciones */
     margin-bottom: 10px;
+}
+
+#image-display img {
+    margin-top: -15px; /* Mueve las imágenes hacia arriba 15px, pero no sobrepongan las instrucciones */
 }
 
 #change-image-btn {
