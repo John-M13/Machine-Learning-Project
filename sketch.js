@@ -15,11 +15,31 @@ const images = [
     category: "Ofensiva",
   },
   {
+    src: "https://i.pinimg.com/736x/4c/ff/63/4cff63e0d8e57bce59784c0869fe6230.jpg",
+    category: "Ofensiva",
+  },
+  {
+    src: "https://i.pinimg.com/736x/a9/b3/5f/a9b35f29537a463c277eb9535db791f3.jpg",
+    category: "Ofensiva",
+  },
+  {
     src: "https://i.pinimg.com/736x/76/a1/db/76a1db22ec15a090aac8021295b43892.jpg",
     category: "Equilibrada",
   },
   {
-    src: "https://i.pinimg.com/736x/28/99/5a/28995a1e1775f0fec82121cb16a4b47a.jpg",
+    src: "https://i.pinimg.com/736x/76/a1/db/76a1db22ec15a090aac8021295b43892.jpg",
+    category: "Equilibrada",
+  },
+  {
+    src: "https://i.pinimg.com/736x/4c/ff/63/4cff63e0d8e57bce59784c0869fe6230.jpg",
+    category: "Equilibrada",
+  },
+  {
+    src: "https://i.pinimg.com/736x/75/e1/0b/75e10bc062d5ac10da1f10d354fb18ec.jpg",
+    category: "Defensiva",
+  },
+  {
+    src: "https://i.pinimg.com/736x/3a/75/b7/3a75b7faba86a993b7f0bd7024a283ee.jpg",
     category: "Defensiva",
   },
 ];
@@ -43,6 +63,12 @@ function setup() {
   // Start classifying after the video has loaded
   video.elt.addEventListener("loadeddata", () => {
     classifyVideo();
+  });
+
+  // Add event listener to the change image button
+  const changeImageBtn = document.getElementById("change-image-btn");
+  changeImageBtn.addEventListener("click", () => {
+    nextImage();
   });
 }
 
@@ -73,6 +99,8 @@ function gotResult(results, error) {
   label = results[0].label;
   confidence = results[0].confidence;
 
+  console.log(`Label: ${label}, Confidence: ${confidence}`);
+
   // Check conditions for image transition
   const currentCategory = images[currentImageIndex].category;
 
@@ -82,32 +110,30 @@ function gotResult(results, error) {
     currentCategory === "Ofensiva"
   ) {
     nextImage();
-  } else if (
-    label === "moneda de dolar" &&
-    confidence > 0.8 &&
-    currentCategory === "Equilibrada"
-  ) {
-    nextImage();
-  } else if (
-    label === "mando de videojuego" &&
-    confidence > 0.8 &&
-    currentCategory === "Defensiva"
-  ) {
-    nextImage();
   }
 
   classifyVideo(); // Keep classifying
 }
 
 function nextImage() {
-  currentImageIndex = (currentImageIndex + 1) % images.length; // Move to the next image
+  let newIndex;
+
+  do {
+    newIndex = Math.floor(Math.random() * images.length);
+  } while (newIndex === currentImageIndex);
+
+  currentImageIndex = newIndex;
   updateImage();
 }
 
 function updateImage() {
   const imageElement = document.getElementById("current-image");
-  const categoryLabel = document.getElementById("category-label");
 
-  imageElement.src = images[currentImageIndex].src;
-  categoryLabel.textContent = `Categoría: ${images[currentImageIndex].category}`;
+  if (imageElement) {
+    const currentImage = images[currentImageIndex];
+    imageElement.src = currentImage.src;
+    console.log(`Updated to image: ${currentImage.src}`);
+  } else {
+    console.error("Error: HTML element not found.");
+  }
 }

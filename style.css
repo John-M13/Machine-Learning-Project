@@ -60,3 +60,21 @@ header {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+#image-display {
+    margin-bottom: 10px;
+}
+
+#change-image-btn {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#change-image-btn:hover {
+    background-color: #333;
+}
