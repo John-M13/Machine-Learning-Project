@@ -6,28 +6,27 @@ h1, h2 {
 h1 {
     color: #ffffff; /* Verde oscuro por defecto */
     font-size: 2.5em; /* Tamaño grande */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    text-shadow: 2px 2px 5px rgba(173, 172, 172, 0.7); /* Sombra suave */
 }
 
 h1:hover {
     color: #00ff1e; /* Verde más oscuro en hover */
     transform: scale(1.1); /* Aumenta ligeramente el tamaño */
-    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7); /* Aumenta la sombra */
+    text-shadow: 4px 4px 10px rgba(173, 172, 172, 0.7); /* Aumenta la sombra */
 }
 
 h2 {
     color: #ffffff; /* Verde brillante por defecto */
     font-size: 2em; /* Tamaño de fuente más pequeño que h1 */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    text-shadow: 2px 2px 5px rgba(173, 172, 172, 0.7); /* Sombra suave */
 }
 
 h2:hover {
     color: #ffffff; /* Verde más oscuro en hover */
     transform: scale(1.05); /* Aumenta ligeramente el tamaño */
-    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* Aumenta la sombra */
+    text-shadow: 4px 4px 10px rgba(173, 172, 172, 0.7); /* Aumenta la sombra */
 }
 
-/* Restante CSS (sin cambios) */
 
 /* Fondo y cuerpo */
 body {
@@ -56,7 +55,7 @@ header {
 
 .header-box {
     padding: 25px;
-    background: linear-gradient(135deg, rgba(16, 126, 34, 0.8), rgba(0, 172, 193, 0.8)); /* Verde + Azul */
+    background: linear-gradient(135deg, rgba(16, 126, 34, 0.8), rgba(0, 172, 193, 0.8)); /* Vdegradado */
     border: 2px solid #fff;
     border-radius: 20px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
@@ -88,7 +87,7 @@ header {
 #instructions h3 {
     margin-top: 0;
     font-size: 1.6em;
-    color: #0b3d1f; /* Verde oscuro para un buen contraste */
+    color: #0b3d1f; 
     font-weight: bold;
 }
 
@@ -96,7 +95,7 @@ header {
     margin: 0;
     padding-left: 20px;
     line-height: 1.8;
-    color: #333; /* Gris oscuro para mejorar el contraste */
+    color: #333; 
 }
 
 #instructions:hover {
@@ -109,7 +108,7 @@ header {
     margin-top: 50px;
     padding: 25px;
     background-color: rgba(255, 247, 247, 0.9); /* Fondo suave */
-    border: 3px solid #107e22; /* Borde verde para consistencia */
+    border: 3px solid #107e22; 
     border-radius: 20px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     width: 400px;
@@ -140,19 +139,6 @@ header {
     filter: brightness(90%);
 }
 
-/* Botón */
-#change-image-btn {
-    margin-top: 15px;
-    padding: 15px 30px;
-    background-color: #107e22; /* Verde intenso */
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
 #change-image-btn:hover {
     background-color: #005c1e; /* Verde más oscuro */

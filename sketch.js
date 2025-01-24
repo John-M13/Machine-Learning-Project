@@ -58,10 +58,10 @@ function setup() {
   video.size(400, 280);
   video.hide();
 
-  // Display the first image
+  
   updateImage();
 
-  // Start classifying after the video has loaded
+  
   video.elt.addEventListener("loadeddata", () => {
     classifyVideo();
   });
@@ -71,7 +71,7 @@ function draw() {
   background(0);
   image(video, 0, 0);
 
-  // Display classification results
+  
   fill(255);
   textSize(16);
   textAlign(CENTER);
