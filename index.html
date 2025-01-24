@@ -12,22 +12,27 @@
 
 <body>
     <header>
-        <h1>"NO FUNCIONA TODAVIA, Se encuentra en proceso"</h1>
-        <h2>Proyecto: "Dibuja tu Jugada"</h2>
+        <div class="header-box">
+            <h1>"Proyecto: "Adivina la alineación"</h1>
+            <h2>SUERTE :)</h2>
+        </div>
     </header>
 
     <div id="instructions">
         <h3>Instrucciones:</h3>
         <ol>
-            <li>Dibuja tu alineación preferida de fútbol en un papel.</li>
-            <li>Muéstrala frente a la pantalla.</li>
-            <li>El sistema te dará la confianza de si es correcta tu alineación dibujada.</li>
-            <li>Te dirá a qué tipo de alineación pertenece.</li>
+            <li>En las imágenes se presentan dos de las tres alineaciones posibles en el fútbol: ofensiva y defensiva.</li>
+            <li>Las tres clases de elementos disponibles son: un mando de videojuego, una moneda de dólar y un fondo.</li>
+            <li>Si la imagen muestra una alineación ofensiva y la confianza es superior a 0,9, se mostrará un mando de videojuego (preferentemente Xbox o PlayStation) y la imagen se actualizará con una nueva alineación.</li>
+            <li>Si la imagen muestra una alineación defensiva y la confianza es superior a 0,9, se mostrará una moneda de dólar y la imagen también cambiará a una nueva alineación.</li>
         </ol>
     </div>
 
-    <div id="image-display">
-        <img id="current-image" src="" alt="Imagen de alineación" width="300">
+    <!-- Cuadro para las imágenes -->
+    <div id="image-box">
+        <div id="image-display">
+            <img id="current-image" src="" alt="Imagen de alineación" width="300">
+        </div>
     </div>
 
     <script src="sketch.js"></script>
