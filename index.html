@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/p5@latest/lib/p5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@latest/lib/addons/p5.dom.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ml5@latest/dist/ml5.min.js"></script>
-
     <title>Machine Learning Project - "En Proceso"</title>
-
     <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <header>
-      <h1>"NO FUNCIONA TODAVIA, Se encuentra en proceso"</h1>
-      <h2>Proyecto: "Dibuja tu Jugada"</h2>
+        <h1>"NO FUNCIONA TODAVIA, Se encuentra en proceso"</h1>
+        <h2>Proyecto: "Dibuja tu Jugada"</h2>
     </header>
 
     <script src="sketch.js"></script>
 
-  
     <div id="instructions">
-      <h3>Instrucciones:</h3>
-      <ol>
-        <li>Dibuja tu alineación preferida de fútbol en un papel.</li>
-        <li>Muéstrala frente a la pantalla.</li>
-        <li>El sistema te dará la confianza de si es correcta tu alineación dibujada.</li>
-        <li>Te dirá a qué tipo de alineación pertenece.</li>
-      </ol>
+        <h3>Instrucciones:</h3>
+        <ol>
+            <li>Dibuja tu alineación preferida de fútbol en un papel.</li>
+            <li>Muéstrala frente a la pantalla.</li>
+            <li>El sistema te dará la confianza de si es correcta tu alineación dibujada.</li>
+            <li>Te dirá a qué tipo de alineación pertenece.</li>
+        </ol>
     </div>
-  </body>
+
+    <div id="image-display">
+        <img id="current-image" src="" alt="Imagen de alineación" width="300">
+        <p id="category-label">Categoría:</p>
+    </div>
+</body>
 </html>

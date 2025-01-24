@@ -1,14 +1,30 @@
 // Classifier Variable
 let classifier;
 // Model URL
-let imageModelURL = "https://teachablemachine.withgoogle.com/models/[...]";
+let imageModelURL = "https://teachablemachine.withgoogle.com/models/pVvhnVTDQ/";
 
 // Video
 let video;
-let flippedVideo;
-// To store the classification
 let label = "";
 let confidence = 0;
+
+// Images and categories
+const images = [
+  {
+    src: "https://i.pinimg.com/736x/f4/7e/d8/f47ed8f0acd6fe8ee238d75ef26df199.jpg",
+    category: "Ofensiva",
+  },
+  {
+    src: "https://i.pinimg.com/736x/76/a1/db/76a1db22ec15a090aac8021295b43892.jpg",
+    category: "Equilibrada",
+  },
+  {
+    src: "https://i.pinimg.com/736x/28/99/5a/28995a1e1775f0fec82121cb16a4b47a.jpg",
+    category: "Defensiva",
+  },
+];
+
+let currentImageIndex = 0;
 
 // Load the model first
 function preload() {
@@ -16,11 +32,13 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(400, 300); // Canvas más ancho para centrar la cámara
-  // Create the video capture
+  createCanvas(400, 300);
   video = createCapture(VIDEO);
-  video.size(320, 240);
-  video.hide(); // Hide the HTML video element
+  video.size(400, 280);
+  video.hide();
+
+  // Display the first image
+  updateImage();
 
   // Start classifying after the video has loaded
   video.elt.addEventListener("loadeddata", () => {
@@ -30,40 +48,66 @@ function setup() {
 
 function draw() {
   background(0);
+  image(video, 0, 0);
 
-  // Calcular la posición para centrar el video
-  let x = (width - video.width) / 2; // Coordenada X centrada
-  let y = 20; // Coordenada Y ligeramente hacia abajo
-
-  // Dibujar el video centrado
-  image(video, x, y, 320, 240);
-
-  // Dibujar el label y la confianza
+  // Display classification results
   fill(255);
   textSize(16);
   textAlign(CENTER);
-
-  // Mostrar el nombre del label y el nivel de confianza
-  text(`Label: ${label}`, width / 2, 270);
-  text(`Confidence: ${(confidence * 100).toFixed(2)}%`, width / 2, 290);
+  text(label, width / 2, height - 4);
+  textSize(8);
+  textAlign(LEFT);
+  text(confidence, 10, height - 4);
 }
 
-// Classify the current video frame
 function classifyVideo() {
-  flippedVideo = ml5.flipImage(video); // Flip the video
-  classifier.classify(flippedVideo, gotResult); // Classify the flipped video
-  flippedVideo.remove(); // Remove flipped image
+  classifier.classify(video, gotResult);
 }
 
-// When we get a result
-function gotResult(error, results) {
+function gotResult(results, error) {
   if (error) {
     console.error(error);
     return;
   }
-  // Store the label and confidence
+
   label = results[0].label;
   confidence = results[0].confidence;
-  // Call classifyVideo again to loop
-  classifyVideo();
+
+  // Check conditions for image transition
+  const currentCategory = images[currentImageIndex].category;
+
+  if (
+    label === "targeta de bus" &&
+    confidence > 0.8 &&
+    currentCategory === "Ofensiva"
+  ) {
+    nextImage();
+  } else if (
+    label === "moneda de dolar" &&
+    confidence > 0.8 &&
+    currentCategory === "Equilibrada"
+  ) {
+    nextImage();
+  } else if (
+    label === "mando de videojuego" &&
+    confidence > 0.8 &&
+    currentCategory === "Defensiva"
+  ) {
+    nextImage();
+  }
+
+  classifyVideo(); // Keep classifying
+}
+
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % images.length; // Move to the next image
+  updateImage();
+}
+
+function updateImage() {
+  const imageElement = document.getElementById("current-image");
+  const categoryLabel = document.getElementById("category-label");
+
+  imageElement.src = images[currentImageIndex].src;
+  categoryLabel.textContent = `Categoría: ${images[currentImageIndex].category}`;
 }

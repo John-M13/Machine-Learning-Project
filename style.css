@@ -1,34 +1,62 @@
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #f4f4f9;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-  text-align: center;
-  margin: 20px;
+    text-align: center;
+    margin: 20px;
 }
 
 #instructions {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 80%;
-  text-align: left;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    text-align: left;
 }
 
 #instructions h3 {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 #instructions ol {
-  margin: 0;
-  padding-left: 20px;
+    margin: 0;
+    padding-left: 20px;
+}
+
+#categories {
+    margin-top: 30px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.category {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.category h4 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.category img {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
