@@ -2,7 +2,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f4f4f9;
+    background-image: url('https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover; /* Asegura que la imagen cubra toda el área */
+    background-position: center; /* Centra la imagen */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -16,7 +18,7 @@ header {
 .header-box {
     padding: 10px;
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 5px solid #107e22;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 80%;
@@ -27,7 +29,7 @@ header {
     margin-top: 20px;
     padding: 10px;
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 5px solid #107e22;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 80%;
@@ -49,11 +51,11 @@ header {
     margin-left: 25px;
     margin-right: 25px;
     padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #fff7f7;
+    border: 5px solid #107e22;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 325px;  /* Ajustamos el ancho del cuadro para que sea 25px más grande que la imagen */
+    width: 378px;  /* Ajustamos el ancho del cuadro para que sea 25px más grande que la imagen */
     text-align: center;
 }
 
@@ -76,6 +78,4 @@ header {
     cursor: pointer;
 }
 
-#change-image-btn:hover {
-    background-color: #333;
-}
+
